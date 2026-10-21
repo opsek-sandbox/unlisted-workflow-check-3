@@ -1,0 +1,11 @@
+name: On issues
+on:
+  issues:
+    types: [opened]
+permissions: {}
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo "on-issues ran for ${{ github.event_name }} in ${{ github.repository }}"
